@@ -14,7 +14,6 @@ func ToJson(v any) string {
 	return string(marshal)
 }
 
-// 直接从string转成any, 采用泛化
 func FromJson[T any](param string) *T {
 	var t T
 	err := json.Unmarshal([]byte(param), &t)

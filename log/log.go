@@ -1,6 +1,7 @@
 package log
 
 import (
+	"os"
 	"strings"
 
 	"github.com/rs/zerolog"
@@ -11,6 +12,7 @@ var logger zerolog.Logger
 func init() {
 	logger = zerolog.New(zerolog.ConsoleWriter{
 		TimeFormat: "2006-01-02 15:04:05",
+		Out:        os.Stderr,
 	}).With().Logger()
 }
 
