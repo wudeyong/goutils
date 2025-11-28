@@ -13,7 +13,7 @@ func init() {
 	logger = zerolog.New(zerolog.ConsoleWriter{
 		TimeFormat: "2006-01-02 15:04:05",
 		Out:        os.Stderr,
-	}).With().Logger()
+	}).With().Caller().CallerWithSkipFrameCount(3).Timestamp().Logger()
 }
 
 func Info(template string, args ...any) {
